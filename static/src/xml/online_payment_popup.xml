@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+  <t t-inherit="pos_online_payment.OnlinePaymentPopup" t-inherit-mode="extension" owl="1">
+    <xpath expr="//img[@class='qr-code']" position="after">
+      <!-- Add a button below the QR code -->
+      <div class="open-link">
+        <button class="btn btn-primary" 
+           t-on-click.prevent="onClickOpenPaymentPage"
+           t-att-data-qr-code="props.qrCode">
+          Open Payment Page
+        </button>
+      </div>
+    </xpath>
+  </t>
+</templates>
